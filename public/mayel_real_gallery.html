@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayel - Ready to Post Instagram Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #2C3E50 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+        }
+        
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        
+        .design-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(52, 152, 219, 0.4);
+        }
+        
+        .design-preview {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .design-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .design-description {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery-header">
+            <h1 class="main-title">📸 MAYEL Instagram Designs</h1>
+            <p class="subtitle">
+                Professional layouts designed for your actual food photos
+            </p>
+        </div>
+        
+        <div class="designs-grid">
+            <div class="design-card">
+                <iframe src="mayel_real_1_salad_bowl.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h3 class="design-title">Fresh Salad Hero</h3>
+                    <p class="design-description">
+                        Perfect for your beautiful salad bowl photos with professional layout
+                    </p>
+                </div>
+            </div>
+            
+            <div class="design-card">
+                <iframe src="mayel_real_2_sandwich_spread.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h3 class="design-title">Feast Spread</h3>
+                    <p class="design-description">
+                        Showcase your complete table spread with multiple items
+                    </p>
+                </div>
+            </div>
+            
+            <div class="design-card">
+                <iframe src="mayel_real_3_brand_story.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h3 class="design-title">Brand Story</h3>
+                    <p class="design-description">
+                        Features your actual MAYEL logo and brand values
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
