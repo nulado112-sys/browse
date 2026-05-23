@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayel - Ultra Professional Instagram Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 75%, #0f3460 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            position: relative;
+        }
+        
+        .header-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(41,128,185,0.1), transparent);
+            filter: blur(100px);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #85c1e9, #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px 80px 40px;
+        }
+        
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        .design-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(25px);
+            border: 2px solid rgba(255,255,255,0.08);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .design-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(133,193,233,0.3);
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.4),
+                0 0 50px rgba(133,193,233,0.1);
+        }
+        
+        .design-preview {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .card-content {
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .design-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .design-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-header">
+        <div class="header-glow"></div>
+        <div class="header-content">
+            <h1 class="main-title">🍔 MAYEL Professional Designs</h1>
+            <p class="subtitle">
+                Ultra-modern Instagram designs crafted with precision and sophistication
+            </p>
+        </div>
+    </div>
+    
+    <div class="gallery-container">
+        <div class="designs-grid">
+            <div class="design-card">
+                <iframe src="mayel_pro_1_salad_hero.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h2 class="design-title">Garden Fresh Elegance</h2>
+                    <p class="design-description">
+                        Sophisticated salad showcase with premium green gradients, floating animations, 
+                        and elegant typography emphasizing quality and freshness.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="design-card">
+                <iframe src="mayel_pro_2_sandwich_mastery.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h2 class="design-title">Craft Master Collection</h2>
+                    <p class="design-description">
+                        Bold, dynamic design with animated elements and powerful typography 
+                        positioning Z Honey Chick as premium craft creation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="design-card">
+                <iframe src="mayel_pro_3_tuna_elegance.html" class="design-preview"></iframe>
+                <div class="card-content">
+                    <h2 class="design-title">Mediterranean Elegance</h2>
+                    <p class="design-description">
+                        Sophisticated ocean theme with wave animations and premium typography 
+                        perfect for tuna pasta salad's Mediterranean essence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
