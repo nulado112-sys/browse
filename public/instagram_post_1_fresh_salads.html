@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayel - Fresh Salads Post</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .instagram-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            position: relative;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        
+        .logo-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .arabic-letter {
+            font-size: 48px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .tagline {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .headline {
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #FFD700;
+            text-shadow: 2px 2px 10px rgba(255,215,0,0.5);
+        }
+        
+        .description {
+            color: rgba(255,255,255,0.9);
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .cta-section {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .cta-text {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .cta-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 18px;
+        }
+        
+        .decoration {
+            position: absolute;
+            color: rgba(255,255,255,0.1);
+            font-size: 200px;
+            z-index: 1;
+        }
+        
+        .decoration-1 {
+            top: -50px;
+            right: -50px;
+            transform: rotate(15deg);
+        }
+        
+        .decoration-2 {
+            bottom: -50px;
+            left: -50px;
+            transform: rotate(-15deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="instagram-post">
+        <div class="background-pattern"></div>
+        
+        <div class="decoration decoration-1">🥗</div>
+        <div class="decoration decoration-2">🍃</div>
+        
+        <div class="content-wrapper">
+            <div class="logo-section">
+                <div class="arabic-letter">و</div>
+                <div class="logo">MAYEL</div>
+                <div class="tagline">ORDER - EAT - REPEAT</div>
+            </div>
+            
+            <div class="main-content">
+                <h1 class="headline">
+                    <span class="highlight">FRESH</span><br>
+                    SALAD PERFECTION
+                </h1>
+                
+                <p class="description">
+                    Premium ingredients, artisanal preparation,<br>
+                    and flavors that make every bite unforgettable
+                </p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🥑</div>
+                        <div class="feature-text">Fresh Ingredients</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🍯</div>
+                        <div class="feature-text">Signature Sauces</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🧀</div>
+                        <div class="feature-text">Premium Cheese</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✨</div>
+                        <div class="feature-text">Chef's Special</div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <div class="cta-text">Try Our Mayel Salad - $9</div>
+                    <div class="cta-subtitle">Grilled Chicken • Pasta • Rocca • Cherry Tomato</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
