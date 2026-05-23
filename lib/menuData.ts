@@ -32,8 +32,8 @@ export const menuData: MenuCategory[] = [
       { name: "Feta Salad", price: "8" },
       { name: "Nacho Salad", price: "8.5" },
       { name: "Crispy Chicken Caesar", price: "7.5" },
-      { name: "Tuna Pasta Salad", price: "9" },
-      { name: "Mayel Salad", price: "9" },
+      { name: "Tuna Pasta Salad", desc: "Tuna, Cherry Tomato, Pasta, Corn, Olive, Cornichon, Lemon Mayo Sauce", price: "9" },
+      { name: "Mayel Salad", desc: "Grilled Chicken, Pasta, Rocca, Iceberg, Cherry Tomato, Cheddar, Mayel Honey Mustard Sauce", price: "9" },
     ],
   },
   {
@@ -96,7 +96,7 @@ export const menuData: MenuCategory[] = [
       { name: "Buffalo Crispy Ranch", desc: "Buffalo Crispy, Iceberg, Tomato, Pickles, Ranch Sauce", price: "7" },
       { name: "BBQ Crunch Melt", desc: "Crispy, Pickles, Coleslaw, Mayo, Cheddar Sauce, BBQ Sauce", price: "7" },
       { name: "B-Truffle", desc: "Steak, Mozzarella, Pickles, Truffle Sauce, Onion, Mushroom", price: "8.5" },
-      { name: "Z Honey Chick", desc: "Honey Chicken, Lettuce, Pickles, Mayo", price: "7" },
+      { name: "Z Honey Chick", desc: "Grilled Chicken, Rocca, Tomato, Pickles, Honey Mustard Sauce", price: "7" },
     ],
   },
   {
