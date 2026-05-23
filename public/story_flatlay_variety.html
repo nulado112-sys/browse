@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Variety Show</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/flatlay1.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.75) 0%,rgba(6,7,15,.1) 35%,rgba(6,7,15,.2) 65%,rgba(6,7,15,.93) 100%)}
+    .rainbow-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(138,43,226,0.06) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 28px 48px;z-index:1}
+    .top{display:flex;flex-direction:column;align-items:center;gap:6px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#8a2be2}
+    .middle{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin-top:60px}
+    .badge{background:rgba(138,43,226,.15);border:1px solid rgba(138,43,226,.3);border-radius:100px;padding:8px 18px;font-size:.5rem;color:#8a2be2;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:2.6rem;color:#fff;line-height:.9;letter-spacing:-.02em}
+    .title span{color:#8a2be2}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.4;max-width:280px}
+    .bottom{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;margin-bottom:10px}
+    .item{background:rgba(138,43,226,.1);border:1px solid rgba(138,43,226,.2);border-radius:8px;padding:6px;text-align:center;font-size:.4rem;color:rgba(138,43,226,.8);font-weight:600}
+    .cta{background:rgba(138,43,226,.2);border:1px solid rgba(138,43,226,.4);border-radius:100px;padding:12px 24px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.6rem;color:#8a2be2;letter-spacing:.03em;width:100%;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="rainbow-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">MA<span>Y</span>EL</div>
+      </div>
+      <div class="middle">
+        <div class="badge">🌈 Menu Variety</div>
+        <div class="title">ENDLESS<br/><span>CHOICES</span><br/>AWAIT</div>
+        <div class="sub">From burgers to bowls, wraps to waffles.<br/>Something delicious for every craving.</div>
+      </div>
+      <div class="bottom">
+        <div class="grid">
+          <div class="item">Burgers</div>
+          <div class="item">Wraps</div>
+          <div class="item">Bowls</div>
+          <div class="item">Desserts</div>
+        </div>
+        <div class="cta">Explore Full Menu</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

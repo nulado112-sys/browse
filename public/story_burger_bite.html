@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Perfect Bite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/hand_burger1.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.8) 0%,rgba(6,7,15,.1) 35%,rgba(6,7,15,.3) 65%,rgba(6,7,15,.94) 100%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:50px 30px 48px;z-index:1}
+    .top{display:flex;flex-direction:column;align-items:center;gap:6px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#c9a84c}
+    .middle{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;margin-top:40px}
+    .badge{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);border-radius:100px;padding:8px 18px;font-size:.48rem;color:#c9a84c;font-weight:700;letter-spacing:.15em}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:2.6rem;color:#fff;line-height:.9;letter-spacing:-.02em}
+    .title span{color:#c9a84c}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.4;max-width:250px}
+    .bottom{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+    .cta{background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.4);border-radius:100px;padding:11px 24px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.62rem;color:#c9a84c;letter-spacing:.03em;width:100%;text-align:center}
+    .url{font-size:.5rem;color:rgba(255,255,255,.4);margin-top:4px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">MA<span>Y</span>EL</div>
+      </div>
+      <div class="middle">
+        <div class="badge">🍔 The Perfect Bite</div>
+        <div class="title">TASTE<br/>THE<br/><span>MOMENT</span></div>
+        <div class="sub">Every bite tells a story.<br/>Fresh, juicy, unforgettable.</div>
+      </div>
+      <div class="bottom">
+        <div class="cta">Experience Mayel Today</div>
+        <div class="url">mayelrestaurant.vercel.app</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

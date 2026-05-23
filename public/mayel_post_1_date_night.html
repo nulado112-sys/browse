@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayel - Date Night Done Right</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Raleway:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .post {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.6)
+            ), url('images/burger1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            letter-spacing: -2px;
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .logo .y {
+            color: #1565C0;
+        }
+        
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: rgba(255, 215, 0, 0.9);
+            text-align: center;
+            margin-top: 120px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .main-text {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .headline {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 72px;
+            line-height: 0.9;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .headline .blue {
+            color: #1565C0;
+        }
+        
+        .description {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+        
+        .website {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #1565C0;
+            letter-spacing: 1px;
+        }
+        
+        .corner-accent {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 215, 0, 0.6);
+        }
+        
+        .corner-accent.top-left {
+            top: 30px;
+            left: 30px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .corner-accent.bottom-right {
+            bottom: 30px;
+            right: 30px;
+            border-left: none;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="corner-accent top-left"></div>
+        <div class="corner-accent bottom-right"></div>
+        
+        <div class="logo">MA<span class="y">Y</span>EL</div>
+        
+        <div class="subtitle">Good Food</div>
+        
+        <div class="main-text">
+            <div class="headline">
+                DATE<br>
+                NIGHT<br>
+                <span class="blue">DONE<br>
+                RIGHT.</span>
+            </div>
+            
+            <div class="description">
+                Food hits different when you share it.
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="tagline">ORDER • EAT • REPEAT</div>
+            <div class="website">mayelb.com</div>
+        </div>
+    </div>
+</body>
+</html>

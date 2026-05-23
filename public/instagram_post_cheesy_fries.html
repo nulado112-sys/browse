@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayel - Cheesy Bliss</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post {
+      position: relative;
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+    }
+
+    /* Background food photo */
+    .bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/images/cheesy_chicken_fries.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Dark gradient overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(6,7,15,0.88) 0%,
+        rgba(6,7,15,0.4) 35%,
+        rgba(6,7,15,0.3) 50%,
+        rgba(6,7,15,0.6) 75%,
+        rgba(6,7,15,0.92) 100%
+      );
+    }
+
+    /* Blue tint overlay */
+    .overlay-blue {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 70% 50% at 50% 50%, 
+        rgba(21,101,192,0.15) 0%, 
+        transparent 70%
+      );
+    }
+
+    /* Content */
+    .content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px 70px;
+      z-index: 10;
+    }
+
+    /* Top section */
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .experience-badge {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #c9a84c;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 3.6rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-text .y {
+      color: #1565c0;
+    }
+
+    /* Middle section */
+    .middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      text-align: center;
+      margin-top: -60px;
+    }
+
+    .headline {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 4.8rem;
+      color: #fff;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .headline span {
+      color: #1565c0;
+    }
+
+    .menu-categories {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+      max-width: 800px;
+      font-weight: 400;
+    }
+
+    .menu-categories span {
+      color: #c9a84c;
+    }
+
+    /* Bottom section */
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #1565c0;
+      background: rgba(21,101,192,0.2);
+      border: 1px solid rgba(21,101,192,0.4);
+      border-radius: 50px;
+      padding: 14px 32px;
+    }
+
+    .website {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+
+    /* Noise texture overlay */
+    .noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 400px 400px;
+      pointer-events: none;
+    }
+
+    /* Corner accents */
+    .corner {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #1565c0;
+      opacity: 0.7;
+    }
+    .corner-tl { top: 40px; left: 40px; }
+    .corner-tr { top: 40px; right: 40px; }
+    .corner-bl { bottom: 40px; left: 40px; }
+    .corner-br { bottom: 40px; right: 40px; }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+    <div class="overlay-blue"></div>
+    <div class="noise"></div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="content">
+      
+      <!-- TOP SECTION -->
+      <div class="top">
+        <div class="experience-badge">The Comfort Experience</div>
+        <div class="logo-text">MA<span class="y">Y</span>EL</div>
+      </div>
+
+      <!-- MIDDLE SECTION -->
+      <div class="middle">
+        <div class="headline">
+          CHEESY<br/>
+          <span>BLISS</span>
+        </div>
+        <div class="menu-categories">
+          <span>Loaded Fries</span> • Melted Cheese • <span>Pure Happiness</span>
+        </div>
+      </div>
+
+      <!-- BOTTOM SECTION -->
+      <div class="bottom">
+        <div class="tagline">ORDER • EAT • REPEAT</div>
+        <div class="website">mayelb.com</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

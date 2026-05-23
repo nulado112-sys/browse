@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayel Restaurant - Instagram Posts Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .header .y {
+      color: #1565c0;
+    }
+
+    .header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #1565c0;
+      margin-top: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .post-card {
+      background: #111;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #222;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(21,101,192,0.3);
+    }
+
+    .post-preview {
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 20px;
+      width: calc(100% - 40px);
+      position: relative;
+    }
+
+    .post-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(0.32);
+      transform-origin: top left;
+      width: 312.5%; /* 100% / 0.32 */
+      height: 312.5%; /* 100% / 0.32 */
+    }
+
+    .post-info {
+      padding: 0 30px 30px;
+    }
+
+    .post-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .post-description {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .post-link {
+      display: inline-block;
+      background: rgba(21,101,192,0.2);
+      border: 1px solid rgba(21,101,192,0.4);
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1565c0;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    .post-link:hover {
+      background: rgba(21,101,192,0.3);
+      border-color: rgba(21,101,192,0.6);
+    }
+
+    .instructions {
+      background: #111;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid #222;
+      margin-bottom: 40px;
+    }
+
+    .instructions h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .instructions ul {
+      list-style: none;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    .instructions li {
+      margin-bottom: 12px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .instructions li::before {
+      content: "→";
+      color: #1565c0;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid #222;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="header">
+      <h1>MA<span class="y">Y</span>EL Restaurant</h1>
+      <p>Professional Instagram Post Designs<br/>Square Format (1080x1080) Social Media Templates</p>
+      <div class="tagline">ORDER • EAT • REPEAT</div>
+    </div>
+
+    <div class="instructions">
+      <h2>How to Use These Designs</h2>
+      <ul>
+        <li>Each design is professionally crafted at 1080x1080 pixels for Instagram posts</li>
+        <li>Open any design in a new tab for full-size viewing</li>
+        <li>Take a screenshot or use browser tools to export as image</li>
+        <li>All designs follow your brand guidelines with Mayel blue (#1565C0) and elegant typography</li>
+        <li>Background images can be easily swapped by editing the CSS background-image URLs</li>
+        <li>Text content can be customized for different menu items or promotions</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_burger_experience.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">The Burger Experience</div>
+          <div class="post-description">"Craving Perfection" - Premium Beef • Fresh Ingredients • Bold Flavors</div>
+          <a href="instagram_post_burger_experience.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_feast_experience.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">The Feast Experience</div>
+          <div class="post-description">"Sharing is Caring" - Mixed Platters • Family Meals • Group Dining</div>
+          <a href="instagram_post_feast_experience.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_comfort_experience.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">The Comfort Experience</div>
+          <div class="post-description">"Golden Crispy" - Loaded Fries • Crispy Sides • Perfect Portions</div>
+          <a href="instagram_post_comfort_experience.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_mayel_experience.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">The Mayel Experience</div>
+          <div class="post-description">"Flavor That Speaks" - Fresh Food • Great Vibes • Memorable Moments</div>
+          <a href="instagram_post_mayel_experience.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_hand_burger.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">Burger Perfection</div>
+          <div class="post-description">"Burger Perfection" - Handcrafted with passion • served with pride</div>
+          <a href="instagram_post_hand_burger.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-preview">
+          <iframe src="instagram_post_cheesy_fries.html"></iframe>
+        </div>
+        <div class="post-info">
+          <div class="post-title">Cheesy Bliss</div>
+          <div class="post-description">"Cheesy Bliss" - Loaded Fries • Melted Cheese • Pure Happiness</div>
+          <a href="instagram_post_cheesy_fries.html" target="_blank" class="post-link">View Full Size</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>© 2024 Mayel Restaurant • Professional Social Media Designs • mayelb.com</p>
+    </div>
+
+  </div>
+</body>
+</html>

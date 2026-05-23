@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Signature Burger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/burger_close.jpg');background-size:cover;background-position:center 65%}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.75) 0%,rgba(6,7,15,.1) 35%,rgba(6,7,15,.15) 65%,rgba(6,7,15,.95) 100%)}
+    .blue-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 60%, rgba(24,112,184,0.08) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:52px 32px 48px;z-index:1}
+    .top{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.6rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#1870b8}
+    .tag{font-size:.45rem;color:rgba(24,112,184,.7);letter-spacing:.45em;text-transform:uppercase;font-weight:600}
+    .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%}
+    .eyebrow{font-size:.5rem;color:#c9a84c;letter-spacing:.4em;text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:8px}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:3.2rem;color:#fff;line-height:.9;letter-spacing:-.03em;text-align:left}
+    .title span{color:#c9a84c}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.4;margin-top:4px}
+    .features{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .feature{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:100px;padding:6px 14px;font-size:.45rem;color:rgba(201,168,76,.85);font-weight:600;letter-spacing:.05em}
+    .price{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:#1870b8;margin-top:6px;display:flex;align-items:center;gap:6px}
+    .price-label{font-size:.5rem;color:rgba(255,255,255,.4);letter-spacing:.2em;text-transform:uppercase}
+    .url{font-family:'Raleway',sans-serif;font-weight:700;font-size:.58rem;color:rgba(255,255,255,.6);margin-top:2px;letter-spacing:.02em}
+    .corner-accent{position:absolute;top:24px;right:24px;width:8px;height:8px;border-radius:50%;background:#c9a84c;opacity:.7}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="blue-glow"></div>
+    <div class="corner-accent"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">MA<span>Y</span>EL</div>
+        <div class="tag">Signature • Fresh • Handcrafted</div>
+      </div>
+      <div class="bottom">
+        <div class="eyebrow">🍔 Signature</div>
+        <div class="title">CRAFTED<br/><span>TO</span><br/>PERFECTION</div>
+        <div class="sub">Our signature burger with artisan brioche bun,<br/>fresh ingredients & secret sauce blend.</div>
+        <div class="features">
+          <div class="feature">Artisan Brioche</div>
+          <div class="feature">Secret Sauce</div>
+          <div class="feature">Fresh Daily</div>
+        </div>
+        <div class="price">
+          <span class="price-label">Starting</span>
+          $8.50
+        </div>
+        <div class="url">mayelrestaurant.vercel.app</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

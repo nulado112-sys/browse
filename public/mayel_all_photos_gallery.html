@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayel - All Food Photos as Instagram Posts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+            color: #fff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .header .y { color: #1565c0; }
+        
+        .header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .post-card {
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: transform 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(21,101,192,0.3);
+        }
+        
+        .post-preview {
+            width: calc(100% - 40px);
+            height: 300px;
+            margin: 20px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .post-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(0.28);
+            transform-origin: top left;
+            width: 357%;
+            height: 357%;
+        }
+        
+        .post-info {
+            padding: 0 30px 30px;
+        }
+        
+        .post-title {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        
+        .post-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .post-link {
+            display: inline-block;
+            background: rgba(21,101,192,0.2);
+            border: 1px solid rgba(21,101,192,0.4);
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: #1565c0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .post-link:hover {
+            background: rgba(21,101,192,0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MA<span class="y">Y</span>EL RESTAURANT</h1>
+        <p>All Your Food Photos as Professional Instagram Posts (1080x1080)</p>
+    </div>
+    
+    <div class="gallery">
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_1_crispy_vibes.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Crispy Vibes</div>
+                <div class="post-description">Golden fries lifestyle - clean modern design</div>
+                <a href="mayel_quick_1_crispy_vibes.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+        
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_2_platter_party.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Platter Party</div>
+                <div class="post-description">Sharing platters with blue accent design</div>
+                <a href="mayel_quick_2_platter_party.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+        
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_3_lifestyle_moment.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Good Moments</div>
+                <div class="post-description">Elegant serif typography lifestyle design</div>
+                <a href="mayel_quick_3_lifestyle_moment.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+        
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_4_sandwich_master.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Sandwich Master</div>
+                <div class="post-description">Bold gold typography with right alignment</div>
+                <a href="mayel_quick_4_sandwich_master.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+        
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_5_burger_beast.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Burger Beast</div>
+                <div class="post-description">Gradient text effect with blue theme</div>
+                <a href="mayel_quick_5_burger_beast.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+        
+        <div class="post-card">
+            <div class="post-preview">
+                <iframe src="mayel_quick_6_fresh_spread.html"></iframe>
+            </div>
+            <div class="post-info">
+                <div class="post-title">Fresh Spread</div>
+                <div class="post-description">Clean minimalist flatlay design</div>
+                <a href="mayel_quick_6_fresh_spread.html" target="_blank" class="post-link">View Design</a>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 60px; color: rgba(255,255,255,0.5);">
+        <p>🚀 Ready for Instagram! Click "View Design" → Screenshot → Post</p>
+        <p style="margin-top: 10px; color: #1565c0; font-weight: 600;">mayelb.com</p>
+    </div>
+</body>
+</html>

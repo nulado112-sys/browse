@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Chef Special</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/chef.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.8) 0%,rgba(6,7,15,.05) 35%,rgba(6,7,15,.25) 65%,rgba(6,7,15,.96) 100%)}
+    .chef-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%, rgba(220,20,60,0.08) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 30px 50px;z-index:1}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#dc143c}
+    .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%}
+    .eyebrow{font-size:.5rem;color:#dc143c;letter-spacing:.4em;text-transform:uppercase;font-weight:700}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:3.2rem;color:#fff;line-height:.9;letter-spacing:-.03em}
+    .title span{color:#dc143c}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.4;margin-top:6px}
+    .features{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .feature{background:rgba(220,20,60,.1);border:1px solid rgba(220,20,60,.25);border-radius:100px;padding:5px 12px;font-size:.45rem;color:rgba(220,20,60,.85);font-weight:600}
+    .price{font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;color:#dc143c;margin-top:8px}
+    .url{font-family:'Raleway',sans-serif;font-weight:600;font-size:.55rem;color:rgba(255,255,255,.5);margin-top:4px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="chef-glow"></div>
+    <div class="content">
+      <div class="logo">MA<span>Y</span>EL</div>
+      <div class="bottom">
+        <div class="eyebrow">👨‍🍳 Chef’s Special</div>
+        <div class="title">CRAFTED<br/>BY<br/><span>MASTERS</span></div>
+        <div class="sub">Our chef’s signature sandwich.<br/>Handcrafted with passion, served with pride.</div>
+        <div class="features">
+          <div class="feature">Chef’s Choice</div>
+          <div class="feature">Daily Special</div>
+          <div class="feature">Limited</div>
+        </div>
+        <div class="price">$9.50</div>
+        <div class="url">mayelrestaurant.vercel.app</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

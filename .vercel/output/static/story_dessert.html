@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Dessert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/waffle_guy.jpg');background-size:cover;background-position:center top}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.65) 0%,rgba(6,7,15,.05) 30%,rgba(6,7,15,.3) 65%,rgba(6,7,15,.97) 100%)}
+    .gold-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 28px 52px;z-index:1}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#1870b8}
+    .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:10px;width:100%}
+    .eyebrow{font-size:.48rem;color:#c9a84c;letter-spacing:.5em;text-transform:uppercase;font-weight:700}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;line-height:.9;letter-spacing:-.03em}
+    .title span{color:#c9a84c}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.5}
+    .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+    .pill{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:5px 12px;font-size:.48rem;color:rgba(201,168,76,.8);font-weight:600;letter-spacing:.06em}
+    .url{font-family:'Raleway',sans-serif;font-weight:800;font-size:.6rem;color:#1870b8;margin-top:4px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="gold-line"></div>
+    <div class="content">
+      <div class="logo">MA<span>Y</span>EL</div>
+      <div class="bottom">
+        <div class="eyebrow">Desserts</div>
+        <div class="title">SAVE<br/>ROOM<br/>FOR<br/><span>THIS.</span></div>
+        <div class="sub">Nutella Crêpe · Nutella Kaaek<br/>Add Kinder · Lotus · Oreo · Banana</div>
+        <div class="row">
+          <div class="pill">From $5</div>
+          <div class="pill">🍫 Nutella</div>
+          <div class="pill">🧇 Crêpe</div>
+        </div>
+        <div class="url">mayelrestaurant.vercel.app</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Full Feast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/full_spread.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.75) 0%,rgba(6,7,15,.1) 35%,rgba(6,7,15,.25) 65%,rgba(6,7,15,.94) 100%)}
+    .feast-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(184,134,11,0.08) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 28px 48px;z-index:1}
+    .top{display:flex;flex-direction:column;align-items:center;gap:6px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#b8860b}
+    .middle{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin-top:60px}
+    .badge{background:rgba(184,134,11,.15);border:1px solid rgba(184,134,11,.3);border-radius:100px;padding:8px 18px;font-size:.5rem;color:#b8860b;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;line-height:.9;letter-spacing:-.025em}
+    .title span{color:#b8860b}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.4;max-width:280px}
+    .bottom{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+    .features{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+    .feature{background:rgba(184,134,11,.12);border:1px solid rgba(184,134,11,.25);border-radius:100px;padding:4px 10px;font-size:.4rem;color:rgba(184,134,11,.8);font-weight:600}
+    .cta{background:rgba(184,134,11,.2);border:1px solid rgba(184,134,11,.4);border-radius:100px;padding:12px 24px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.6rem;color:#b8860b;letter-spacing:.03em;width:100%;text-align:center;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="feast-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">MA<span>Y</span>EL</div>
+      </div>
+      <div class="middle">
+        <div class="badge">🍽️ The Full Experience</div>
+        <div class="title">FEAST<br/><span>MODE</span><br/>ACTIVATED</div>
+        <div class="sub">When you can't choose just one.<br/>Experience our full menu variety.</div>
+      </div>
+      <div class="bottom">
+        <div class="features">
+          <div class="feature">Burgers</div>
+          <div class="feature">Fries</div>
+          <div class="feature">Sandwiches</div>
+          <div class="feature">Sides</div>
+        </div>
+        <div class="cta">Order The Full Experience</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

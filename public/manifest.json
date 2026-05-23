@@ -1,0 +1,23 @@
+{
+  "name": "Mayel Restaurant",
+  "short_name": "Mayel",
+  "description": "Order · Eat · Repeat",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070f",
+  "theme_color": "#06070f",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

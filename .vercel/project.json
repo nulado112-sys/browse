@@ -1,0 +1,16 @@
+{
+  "projectId": "prj_pAKcLEkBIiknTtp9ky5uENZasU8q",
+  "orgId": "team_7bDhvBs1khWp7EL45dxRtYxe",
+  "projectName": "mayel-restaurant",
+  "settings": {
+    "createdAt": 1776428302974,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}

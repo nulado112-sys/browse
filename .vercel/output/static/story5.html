@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel Story 5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px;background:linear-gradient(160deg,#0d0e1a 0%,#06070f 100%)}
+    .glow{position:absolute;width:340px;height:340px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(24,112,184,.12) 0%,transparent 70%);pointer-events:none}
+    .line-top{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(24,112,184,.5),transparent)}
+    .line-bot{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:52px 36px 48px}
+    .top-tag{font-size:.5rem;color:rgba(255,255,255,.25);letter-spacing:.5em;text-transform:uppercase}
+    .middle{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+    .year{font-family:'Raleway',sans-serif;font-weight:900;font-size:5rem;color:#1870b8;line-height:1;letter-spacing:-.04em;opacity:.15}
+    .story-text{display:flex;flex-direction:column;gap:16px;position:relative;margin-top:-60px}
+    .line{display:flex;align-items:flex-start;gap:14px}
+    .dot-col{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#1870b8;flex-shrink:0}
+    .dot.gold{background:#c9a84c}
+    .connector{width:1px;height:24px;background:rgba(24,112,184,.2)}
+    .line-text{text-align:left}
+    .line-label{font-size:.5rem;color:#1870b8;letter-spacing:.3em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
+    .line-label.gold{color:#c9a84c}
+    .line-desc{font-family:'Playfair Display',serif;color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.4}
+    .divider{display:flex;align-items:center;gap:12px;width:100%}
+    .div-line{height:1px;flex:1;background:rgba(255,255,255,.07)}
+    .div-text{font-size:.5rem;color:rgba(255,255,255,.2);letter-spacing:.3em;text-transform:uppercase}
+    .bottom{display:flex;flex-direction:column;align-items:center;gap:10px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:2.2rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#1870b8}
+    .tag{font-size:.45rem;color:rgba(24,112,184,.6);letter-spacing:.4em;text-transform:uppercase;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="glow"></div>
+    <div class="line-top"></div>
+    <div class="line-bot"></div>
+    <div class="content">
+      <div class="top-tag">Our Journey</div>
+      <div class="middle">
+        <div class="year">2018</div>
+        <div class="story-text">
+          <div class="line">
+            <div class="dot-col">
+              <div class="dot"></div>
+              <div class="connector"></div>
+            </div>
+            <div class="line-text">
+              <div class="line-label">2018</div>
+              <div class="line-desc">Started as a small kiosk selling kaaek on the street.</div>
+            </div>
+          </div>
+          <div class="line">
+            <div class="dot-col">
+              <div class="dot"></div>
+              <div class="connector"></div>
+            </div>
+            <div class="line-text">
+              <div class="line-label">The Growth</div>
+              <div class="line-desc">Opened a full indoor restaurant. Same love, bigger kitchen.</div>
+            </div>
+          </div>
+          <div class="line">
+            <div class="dot-col">
+              <div class="dot gold"></div>
+            </div>
+            <div class="line-text">
+              <div class="line-label gold">The Secret</div>
+              <div class="line-desc">Our sauces. That's the magic behind every bite.</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider">
+          <div class="div-line"></div>
+          <div class="div-text">Still going strong</div>
+          <div class="div-line"></div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo">MA<span>Y</span>EL</div>
+        <div class="tag">Order · Eat · Repeat</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

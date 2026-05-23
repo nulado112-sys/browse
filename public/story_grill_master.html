@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Grill Master</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/grill_fire.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.7) 0%,rgba(6,7,15,.1) 30%,rgba(6,7,15,.2) 70%,rgba(6,7,15,.95) 100%)}
+    .fire-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 60%, rgba(255,69,0,0.1) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 32px 52px;z-index:1}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#ff4500}
+    .bottom{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%}
+    .eyebrow{font-size:.5rem;color:#ff4500;letter-spacing:.4em;text-transform:uppercase;font-weight:700}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;line-height:.85;letter-spacing:-.04em}
+    .title span{color:#ff4500}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.4;margin-top:4px}
+    .feature{background:rgba(255,69,0,.12);border:1px solid rgba(255,69,0,.3);border-radius:100px;padding:6px 14px;font-size:.45rem;color:rgba(255,69,0,.9);font-weight:600;margin-top:8px;display:inline-block}
+    .url{font-family:'Raleway',sans-serif;font-weight:700;font-size:.58rem;color:rgba(255,255,255,.5);margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="fire-glow"></div>
+    <div class="content">
+      <div class="logo">MA<span>Y</span>EL</div>
+      <div class="bottom">
+        <div class="eyebrow">🔥 Behind The Scenes</div>
+        <div class="title">GRILLED<br/><span>TO</span><br/>PERFECTION</div>
+        <div class="sub">Where flames meet flavor.<br/>Fresh on the grill, straight to your plate.</div>
+        <div class="feature">Live Fire Cooking</div>
+        <div class="url">mayelrestaurant.vercel.app</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

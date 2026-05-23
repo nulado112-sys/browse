@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – Order Now</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/chair_burger.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.7) 0%,rgba(6,7,15,.1) 35%,rgba(6,7,15,.1) 55%,rgba(6,7,15,.95) 100%)}
+    .gold-line{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 28px 52px;z-index:1}
+
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#1870b8}
+
+    .bottom-block{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;text-align:center}
+    .eyebrow{font-size:.48rem;color:#c9a84c;letter-spacing:.5em;text-transform:uppercase;font-weight:700}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:3.8rem;color:#fff;line-height:.88;letter-spacing:-.04em}
+    .title span{color:#1870b8}
+
+    .steps{display:flex;gap:12px;justify-content:center}
+    .step{display:flex;flex-direction:column;align-items:center;gap:4px}
+    .step-num{width:28px;height:28px;border-radius:50%;background:#1870b8;font-family:'Raleway',sans-serif;font-weight:900;font-size:.6rem;color:#fff;display:flex;align-items:center;justify-content:center}
+    .step-text{font-size:.45rem;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+    .step-arrow{font-size:.7rem;color:rgba(255,255,255,.15);margin-bottom:12px}
+
+    .cta-btn{background:linear-gradient(135deg,#1870b8,#0f4f85);border-radius:14px;padding:14px 32px;font-family:'Raleway',sans-serif;font-weight:800;font-size:.75rem;color:#fff;letter-spacing:.12em;text-transform:uppercase}
+    .url{font-size:.52rem;color:rgba(255,255,255,.25);letter-spacing:.25em}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="gold-line"></div>
+    <div class="content">
+
+      <div class="logo">MA<span>Y</span>EL</div>
+
+      <div class="bottom-block">
+        <div class="eyebrow">Fast & Easy</div>
+        <div class="title">ORDER<br/><span>NOW.</span></div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">Browse</div>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">Choose</div>
+          </div>
+          <div class="step-arrow">→</div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">WhatsApp</div>
+          </div>
+        </div>
+
+        <div class="cta-btn">mayelrestaurant.vercel.app</div>
+        <div class="url">Open the link · Tap your item · Done</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

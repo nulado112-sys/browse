@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mayel – The Spread</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center}
+    .story{position:relative;width:390px;height:692px;overflow:hidden;border-radius:16px}
+    .bg{position:absolute;inset:0;background-image:url('/images/spread.jpg');background-size:cover;background-position:center}
+    .ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,7,15,.75) 0%,rgba(6,7,15,.05) 35%,rgba(6,7,15,.2) 65%,rgba(6,7,15,.92) 100%)}
+    .spread-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,140,0,0.08) 0%, transparent 70%)}
+    .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:48px 28px 48px;z-index:1}
+    .top{display:flex;flex-direction:column;align-items:center;gap:6px}
+    .logo{font-family:'Raleway',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .logo span{color:#ff8c00}
+    .middle{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin-top:60px}
+    .badge{background:rgba(255,140,0,.15);border:1px solid rgba(255,140,0,.3);border-radius:100px;padding:8px 18px;font-size:.5rem;color:#ff8c00;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .title{font-family:'Raleway',sans-serif;font-weight:900;font-size:2.8rem;color:#fff;line-height:.9;letter-spacing:-.025em}
+    .title span{color:#ff8c00}
+    .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.4;max-width:280px}
+    .bottom{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+    .tagline{font-family:'Raleway',sans-serif;font-weight:600;font-size:.55rem;color:rgba(255,140,0,.8);letter-spacing:.1em;text-transform:uppercase}
+    .cta{background:rgba(255,140,0,.2);border:1px solid rgba(255,140,0,.4);border-radius:100px;padding:12px 24px;font-family:'Raleway',sans-serif;font-weight:700;font-size:.6rem;color:#ff8c00;letter-spacing:.03em;width:100%;text-align:center;margin-top:6px}
+  </style>
+</head>
+<body>
+  <div class="story">
+    <div class="bg"></div>
+    <div class="ov"></div>
+    <div class="spread-glow"></div>
+    <div class="content">
+      <div class="top">
+        <div class="logo">MA<span>Y</span>EL</div>
+      </div>
+      <div class="middle">
+        <div class="badge">🍽️ The Spread</div>
+        <div class="title">SHARE<br/>THE<br/><span>LOVE</span></div>
+        <div class="sub">Perfect for sharing, impossible to resist.<br/>Bring your crew and spread the love.</div>
+      </div>
+      <div class="bottom">
+        <div class="tagline">Food Worth Sharing</div>
+        <div class="cta">Order For Your Crew</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
