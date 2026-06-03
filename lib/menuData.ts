@@ -109,6 +109,7 @@ export const menuData: MenuCategory[] = [
       { name: "Cheese Burger Platter", desc: "2 Patties, Cheddar Cheese, French Fries, Coleslaw or Green Salad", price: "11.5" },
       { name: "Chicken Burger Platter", desc: "2 Chicken Slices, French Fries, Coleslaw or Green Salad", price: "11" },
       { name: "Crispy Platter", desc: "Crispy Chicken, French Fries, Coleslaw", price: "10.5" },
+      { name: "Chicken Nuggets Platter (Kids Meal)", desc: "6 Pieces, Coleslaw, Fries, Juice", price: "6.5" },
     ],
   },
   {
