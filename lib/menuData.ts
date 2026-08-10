@@ -139,7 +139,7 @@ export const menuData: MenuCategory[] = [
       { name: "Ice Tea Peach", price: "1.5" },
       { name: "Rim Sparkling Water", price: "1.5" },
       { name: "Beer", price: "3" },
-      { name: "Water", price: "0.5" },
+      { name: "Water", price: "1" },
     ],
   },
   {
@@ -156,9 +156,9 @@ export const menuData: MenuCategory[] = [
     label: "Sauces",
     icon: "🥫",
     items: [
-      { name: "Buffalo Sauce", price: "1" },
-      { name: "BBQ Sauce", price: "1" },
-      { name: "Cheddar Sauce", price: "1" },
+      { name: "Buffalo Sauce", price: "0.5" },
+      { name: "BBQ Sauce", price: "0.5" },
+      { name: "Cheddar Sauce", price: "0.5" },
     ],
   },
 ];
