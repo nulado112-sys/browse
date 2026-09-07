@@ -58,8 +58,8 @@ export const menuData: MenuCategory[] = [
     label: "Burgers",
     icon: "🍔",
     items: [
-      { name: "Hamburger", desc: "Patty, Pickles, Tomato, Iceberg, Mayo, Ketchup", price: "6" },
-      { name: "Cheese Burger", desc: "Patty, Cheddar, Pickles, Tomato, Iceberg, Mayo, Ketchup", price: "6.5" },
+      { name: "Hamburger", desc: "Patty, Pickles, Tomato, Iceberg, Mayo, Ketchup", price: "7" },
+      { name: "Cheese Burger", desc: "Patty, Cheddar, Pickles, Tomato, Iceberg, Mayo, Ketchup", price: "7.5" },
       { name: "Chicken Burger", desc: "Chicken, Pickles, Iceberg, Mayo, Garlic", price: "6" },
       { name: "Crispy Burger", desc: "Crispy Chicken, Pickles, Iceberg, Mayo, Cocktail Sauce", price: "6" },
     ],
@@ -105,8 +105,8 @@ export const menuData: MenuCategory[] = [
     icon: "🍽",
     items: [
       { name: "Grilled Chicken Breast", desc: "4 pieces Chicken Breast, French Fries, Coleslaw or Green Salad", price: "11" },
-      { name: "Hamburger Platter", desc: "2 Patties, French Fries, Coleslaw or Green Salad", price: "11" },
-      { name: "Cheese Burger Platter", desc: "2 Patties, Cheddar Cheese, French Fries, Coleslaw or Green Salad", price: "11.5" },
+      { name: "Hamburger Platter", desc: "2 Patties, French Fries, Coleslaw or Green Salad", price: "12.5" },
+      { name: "Cheese Burger Platter", desc: "2 Patties, Cheddar Cheese, French Fries, Coleslaw or Green Salad", price: "13" },
       { name: "Chicken Burger Platter", desc: "2 Chicken Slices, French Fries, Coleslaw or Green Salad", price: "11" },
       { name: "Crispy Platter", desc: "Crispy Chicken, French Fries, Coleslaw", price: "10.5" },
       { name: "Chicken Nuggets Platter (Kids Meal)", desc: "6 Pieces, Coleslaw, Fries, Juice", price: "6.5" },
