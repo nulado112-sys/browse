@@ -68,43 +68,49 @@ export default function Hero() {
       {/* ── LAYOUT ── */}
       <div className="relative z-10 flex flex-col" style={{ minHeight: "100svh" }}>
 
-        {/* TOP BAR */}
+        {/* ── TOP: Logo + status ── */}
         <div
-          className="hero-top flex items-center justify-between px-5"
-          style={{ paddingTop: "calc(1rem + env(safe-area-inset-top, 0px))", paddingBottom: "0.75rem" }}
+          className="hero-top flex flex-col items-center px-5"
+          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top, 0px))", paddingBottom: "1rem" }}
         >
-          <div
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
-            style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.13)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.8)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              Now Open
+          {/* Status row */}
+          <div className="flex items-center justify-between w-full mb-5">
+            <div
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+              style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.13)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.8)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                Now Open
+              </span>
+            </div>
+            <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.1em" }}>
+              Anfeh, Lebanon
             </span>
           </div>
-          <span style={{ fontSize: "0.6rem", color: "rgba(255,255,255,0.4)", fontWeight: 500, letterSpacing: "0.1em" }}>
-            Anfeh, Lebanon
-          </span>
-        </div>
 
-        {/* CENTER CONTENT */}
-        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center" style={{ paddingBottom: "1rem" }}>
-
-          {/* LOGO — white version of the real brand mark */}
-          <div className="hero-logo mb-5">
+          {/* LOGO — centered at top, no tagline */}
+          <div className="hero-logo">
             <Image
-              src="/images/logo-transparent.png"
+              src="/images/mayel-logo-hero.png"
               alt="Mayel"
               width={320}
-              height={160}
+              height={140}
               priority
               style={{
-                width: "clamp(200px, 56vw, 280px)",
+                width: "clamp(160px, 48vw, 240px)",
                 height: "auto",
                 filter: "brightness(0) invert(1)",
               }}
             />
           </div>
+        </div>
+
+        {/* ── MIDDLE: empty — mural shows through ── */}
+        <div className="flex-1" />
+
+        {/* ── BOTTOM: tagline + CTA ── */}
+        <div className="flex flex-col items-center px-6 text-center" style={{ paddingBottom: "1.5rem" }}>
 
           {/* DIVIDER */}
           <div
@@ -124,11 +130,11 @@ export default function Hero() {
             className="hero-sub"
             style={{
               fontSize: "0.58rem",
-              color: "rgba(255,255,255,0.45)",
+              color: "rgba(255,255,255,0.5)",
               fontWeight: 700,
               letterSpacing: "0.38em",
               textTransform: "uppercase",
-              marginBottom: "32px",
+              marginBottom: "24px",
             }}
           >
             Burgers · Wraps · Kaaek · More

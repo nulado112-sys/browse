@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,254 +9,127 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const photos = [
-  {
-    src: "/images/chef.jpg",
-    alt: "Chef presenting signature Mayel sandwich",
-    label: "Sandwiches",
-    tab: "sandwiches",
-    span: "tall",
-  },
-  {
-    src: "/images/burger.jpg",
-    alt: "Mayel signature burger on black tray",
-    label: "Burgers",
-    tab: "burgers",
-    span: "normal",
-  },
-  {
-    src: "/images/bowl.jpg",
-    alt: "Fresh chicken bowl",
-    label: "Salads",
-    tab: "salads",
-    span: "normal",
-  },
-  {
-    src: "/images/waffle.jpg",
-    alt: "Nutella waffle with strawberries and banana",
-    label: "Desserts",
-    tab: "desserts",
-    span: "wide",
-  },
-];
-
-function goToMenuTab(tab: string) {
-  window.dispatchEvent(new CustomEvent("setMenuTab", { detail: tab }));
-  setTimeout(() => {
-    document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
-  }, 50);
-}
-
 export default function Gallery() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [lightbox, setLightbox] = useState<null | { src: string; alt: string }>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".gallery-label", {
+      gsap.from(".gallery-header", {
         opacity: 0, y: 30, duration: 0.7,
-        scrollTrigger: { trigger: ".gallery-label", start: "top 85%" },
+        scrollTrigger: { trigger: ".gallery-header", start: "top 88%" },
       });
-      gsap.from(".gallery-heading", {
-        opacity: 0, y: 50, duration: 0.8,
-        scrollTrigger: { trigger: ".gallery-heading", start: "top 85%" },
-      });
-      gsap.from(".gallery-cell", {
+      gsap.from(".brand-card", {
         opacity: 0,
-        y: 40,
-        scale: 0.95,
-        stagger: { amount: 0.5, from: "start" },
+        y: 50,
+        stagger: 0.12,
         duration: 0.7,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".gallery-grid",
-          start: "top 80%",
-        },
+        scrollTrigger: { trigger: ".brand-cards", start: "top 82%" },
       });
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
-  // Close lightbox on escape
-  useEffect(() => {
-    if (!lightbox) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [lightbox]);
-
   return (
-    <section ref={sectionRef} id="gallery" className="relative py-24 overflow-hidden">
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-96 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%)",
-        }}
-      />
+    <section ref={sectionRef} id="gallery" className="relative py-24 overflow-hidden bg-white">
 
       <div className="px-6 max-w-lg mx-auto">
+
         {/* Header */}
-        <div className="gallery-label flex items-center gap-3 mb-5">
-          <div className="gold-divider" />
-          <span className="section-label">Gallery</span>
+        <div className="gallery-header mb-10">
+          <h2 style={{
+            fontFamily: "'Raleway', system-ui, sans-serif",
+            fontWeight: 900,
+            fontSize: "clamp(2.2rem, 9vw, 3.5rem)",
+            lineHeight: 1.0,
+            color: "#0D1B2A",
+            letterSpacing: "-0.02em",
+          }}>
+            The brand.<br />
+            <span style={{ color: "#C41E1E" }}>Up close.</span>
+          </h2>
         </div>
 
-        <h2 className="gallery-heading section-title mb-10">
-          Food that<br />
-          <span className="italic text-brand-gold">speaks</span>
-        </h2>
+        {/* BRAND CARDS */}
+        <div className="brand-cards flex flex-col gap-4">
 
-        {/* GRID */}
-        <div
-          className="gallery-grid grid gap-3"
-          style={{ gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto" }}
-        >
-          {/* Cell 1 — Chef (tall, spans 1 col, 2 rows) */}
-          <div
-            className="gallery-cell gallery-img-wrap"
-            style={{ gridRow: "span 2", minHeight: "380px", borderRadius: "1.25rem" }}
-            onClick={() => goToMenuTab(photos[0].tab)}
-          >
+          {/* Card 1 — Wrap (full width, most bold) */}
+          <div className="brand-card relative overflow-hidden rounded-3xl" style={{ minHeight: "340px" }}>
             <Image
-              src={photos[0].src}
-              alt={photos[0].alt}
+              src="/images/brand-wrap.jpg"
+              alt="Mayel Wraps"
               fill
-              className="object-cover transition-transform duration-700"
-              sizes="50vw"
-            />
-            <div className="gallery-overlay" />
-            <div className="absolute bottom-4 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-white text-xs font-semibold tracking-wider bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">
-                {photos[0].label}
-              </span>
-            </div>
-            {/* Always-visible label */}
-            <div className="absolute bottom-4 left-4 z-10">
-              <span
-                className="text-white/80 text-xs font-semibold tracking-wider"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
-              >
-                {photos[0].label}
-              </span>
-            </div>
-          </div>
-
-          {/* Cell 2 — Burger */}
-          <div
-            className="gallery-cell gallery-img-wrap"
-            style={{ minHeight: "185px", borderRadius: "1.25rem" }}
-            onClick={() => goToMenuTab(photos[1].tab)}
-          >
-            <Image
-              src={photos[1].src}
-              alt={photos[1].alt}
-              fill
-              className="object-cover transition-transform duration-700"
-              sizes="50vw"
-            />
-            <div className="gallery-overlay" />
-            <div className="absolute bottom-3 left-3 z-10">
-              <span
-                className="text-white/80 text-xs font-semibold tracking-wider"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
-              >
-                {photos[1].label}
-              </span>
-            </div>
-          </div>
-
-          {/* Cell 3 — Bowl */}
-          <div
-            className="gallery-cell gallery-img-wrap"
-            style={{ minHeight: "185px", borderRadius: "1.25rem" }}
-            onClick={() => goToMenuTab(photos[2].tab)}
-          >
-            <Image
-              src={photos[2].src}
-              alt={photos[2].alt}
-              fill
-              className="object-cover transition-transform duration-700"
-              sizes="50vw"
-            />
-            <div className="gallery-overlay" />
-            <div className="absolute bottom-3 left-3 z-10">
-              <span
-                className="text-white/80 text-xs font-semibold tracking-wider"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
-              >
-                {photos[2].label}
-              </span>
-            </div>
-          </div>
-
-          {/* Cell 4 — Waffle (wide, spans 2 cols) */}
-          <div
-            className="gallery-cell gallery-img-wrap"
-            style={{ gridColumn: "span 2", minHeight: "240px", borderRadius: "1.25rem" }}
-            onClick={() => goToMenuTab(photos[3].tab)}
-          >
-            <Image
-              src={photos[3].src}
-              alt={photos[3].alt}
-              fill
-              className="object-cover transition-transform duration-700"
-              style={{ objectPosition: "center 30%" }}
+              className="object-cover object-center transition-transform duration-700 hover:scale-105"
               sizes="100vw"
             />
-            <div className="gallery-overlay" />
-            <div className="absolute bottom-4 left-4 z-10">
-              <span
-                className="text-white/80 text-xs font-semibold tracking-wider"
-                style={{ textShadow: "0 1px 8px rgba(0,0,0,0.8)" }}
-              >
-                {photos[3].label}
-              </span>
-            </div>
-            {/* Gold tag */}
-            <div className="absolute top-4 right-4 z-10">
-              <span className="bg-brand-gold/20 border border-brand-gold/40 text-brand-gold text-[0.6rem] font-semibold tracking-widest uppercase px-3 py-1 rounded-full backdrop-blur-sm">
-                Sweet
-              </span>
+            {/* subtle overlay at bottom for label */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,61,191,0.55) 0%, transparent 50%)" }} />
+            <div className="absolute bottom-5 left-5">
+              <span className="text-white font-black text-lg tracking-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>Wraps</span>
+              <p className="text-white/70 text-xs tracking-wider mt-0.5">Made to order</p>
             </div>
           </div>
+
+          {/* Row — Rooster mascot + Spicy Philly (side by side) */}
+          <div className="grid grid-cols-2 gap-4">
+
+            {/* Card 2 — Rooster on dark navy */}
+            <div
+              className="brand-card relative overflow-hidden rounded-3xl flex items-center justify-center"
+              style={{ minHeight: "220px", background: "#0D1B3E" }}
+            >
+              <Image
+                src="/images/mascot-correct.jpg"
+                alt="Mayel Mascot"
+                fill
+                className="object-contain p-3 transition-transform duration-500 hover:scale-105"
+                sizes="50vw"
+              />
+              <div className="absolute bottom-3 left-0 right-0 text-center">
+                <span className="text-white/90 text-[0.6rem] font-black tracking-[0.2em] uppercase">
+                  The Mascot
+                </span>
+              </div>
+            </div>
+
+            {/* Card 3 — Spicy Philly on blue */}
+            <div
+              className="brand-card relative overflow-hidden rounded-3xl flex items-center justify-center"
+              style={{ minHeight: "220px", background: "#1A3DBF" }}
+            >
+              <Image
+                src="/images/brand-spicy-philly.jpg"
+                alt="The Spicy Philly"
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
+                sizes="50vw"
+              />
+              <div className="absolute bottom-3 left-0 right-0 text-center">
+                <span className="text-white/90 text-[0.6rem] font-black tracking-[0.2em] uppercase">
+                  Spicy Philly
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4 — Restaurant interior (full width) */}
+          <div className="brand-card relative overflow-hidden rounded-3xl" style={{ minHeight: "280px" }}>
+            <Image
+              src="/images/brand-interior.jpg"
+              alt="Mayel Restaurant"
+              fill
+              className="object-cover object-center transition-transform duration-700 hover:scale-105"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)" }} />
+            <div className="absolute bottom-5 left-5 right-5">
+              <span className="text-white font-black text-lg tracking-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>Our Space</span>
+              <p className="text-white/65 text-xs tracking-wider mt-0.5">Dine in · Takeaway · Delivery</p>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* LIGHTBOX */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6"
-          onClick={() => setLightbox(null)}
-        >
-          <button
-            className="absolute top-6 right-6 w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-            onClick={() => setLightbox(null)}
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </button>
-          <div
-            className="relative w-full max-w-sm rounded-2xl overflow-hidden"
-            style={{ maxHeight: "80vh", aspectRatio: "3/4" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={lightbox.src}
-              alt={lightbox.alt}
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 }
