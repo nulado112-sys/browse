@@ -1,200 +1,220 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial states
-      gsap.set(".hero-letter",      { opacity: 0, y: 40, rotateX: -30 });
-      gsap.set(".hero-tagline-wrap",{ opacity: 0, y: 18 });
-      gsap.set(".hero-subtitle",    { opacity: 0, y: 14 });
-      gsap.set(".hero-cta-btn",     { opacity: 0, y: 24, scale: 0.96 });
-      gsap.set(".scroll-hint",      { opacity: 0 });
-      gsap.set(".hero-top-bar",     { opacity: 0, y: -20 });
+      // Slow Ken Burns on background
+      gsap.fromTo(bgRef.current,
+        { scale: 1.08 },
+        { scale: 1, duration: 8, ease: "power1.out" }
+      );
 
-      const tl = gsap.timeline({ delay: 0.4 });
+      // Content entrance
+      gsap.set(".hero-badge",        { opacity: 0, y: -10 });
+      gsap.set(".hero-letter",       { opacity: 0, y: 50 });
+      gsap.set(".hero-divider",      { scaleX: 0, opacity: 0 });
+      gsap.set(".hero-tagline-wrap", { opacity: 0, y: 12 });
+      gsap.set(".hero-cta-btn",      { opacity: 0, y: 16 });
+      gsap.set(".hero-ticker",       { opacity: 0 });
 
+      const tl = gsap.timeline({ delay: 0.3 });
       tl
-        .to(".hero-top-bar",      { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" })
-        .to(".hero-letter",       { opacity: 1, y: 0, rotateX: 0, duration: 0.7, ease: "power3.out", stagger: 0.08 }, "-=0.2")
-        .to(".hero-tagline-wrap", { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.2")
-        .to(".hero-subtitle",     { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.4")
-        .to(".hero-cta-btn",      { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.5)" }, "-=0.3")
-        .to(".scroll-hint",       { opacity: 1, duration: 0.5 }, "+=0.2");
-
-      // Bounce scroll dot
-      gsap.to(".scroll-dot-inner", {
-        y: 8, duration: 1.2, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 2.5,
-      });
-
+        .to(".hero-badge",        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" })
+        .to(".hero-letter",       { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: "power3.out" }, "-=0.2")
+        .to(".hero-divider",      { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, "-=0.2")
+        .to(".hero-tagline-wrap", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, "-=0.3")
+        .to(".hero-cta-btn",      { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.4)" }, "-=0.2")
+        .to(".hero-ticker",       { opacity: 1, duration: 0.4 }, "-=0.1");
     }, containerRef);
-
     return () => ctx.revert();
   }, []);
+
+  const tickerItems = ["Burgers", "Kaaek", "Wraps", "Spicy Philly", "Salads", "Platters", "Sandwiches", "Tenders"];
 
   return (
     <section
       ref={containerRef}
       id="home"
-      className="relative w-full h-screen min-h-[100svh] overflow-hidden noise"
+      className="relative w-full min-h-[100svh] overflow-hidden"
+      style={{ background: "#0A1628" }}
     >
-      {/* VIDEO */}
-      <div className="hero-video-wrap absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover"
-          autoPlay muted loop playsInline preload="auto"
-        >
-          <source src="/video/intro.mov" type="video/mp4" />
-          <source src="/video/intro.mov" type="video/quicktime" />
-        </video>
+      {/* ── BACKGROUND PHOTO ── */}
+      <div ref={bgRef} className="absolute inset-0 will-change-transform">
+        <Image
+          src="/images/love-that-chicken.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
       </div>
 
-      {/* OVERLAYS */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/75 via-black/40 to-black/90" />
-      <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+      {/* ── OVERLAYS ── */}
+      {/* Top fade */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "linear-gradient(to bottom, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.05) 35%, rgba(10,22,40,0.1) 60%, rgba(10,22,40,0.92) 100%)"
+      }} />
 
-      {/* TOP BAR */}
-      <div className="hero-top-bar absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 pt-6">
+      {/* ── TOP BAR ── */}
+      <div
+        className="hero-badge absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 pt-6"
+        style={{ paddingRight: "68px" }}
+      >
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-          <span className="text-white/60 text-xs tracking-widest uppercase font-medium">Mayel</span>
+          <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#C41E1E" }} />
+          <span style={{ fontSize: "0.65rem", color: "white", opacity: 0.75, fontWeight: 600, letterSpacing: "0.15em" }}>
+            Now Open
+          </span>
         </div>
-        <div className="flex items-center gap-1">
-          {["•","•","•"].map((d,i) => <span key={i} className="text-white/40 text-xs">{d}</span>)}
-        </div>
+        <span style={{ fontSize: "0.65rem", color: "white", opacity: 0.4, fontWeight: 400, letterSpacing: "0.1em" }}>
+          Anfeh, Lebanon
+        </span>
       </div>
 
-      {/* MAIN CONTENT */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
+      {/* ── MAIN CONTENT — pinned to bottom ── */}
+      <div className="relative z-10 flex flex-col items-center justify-end min-h-[100svh] px-5 pb-10 text-center">
 
-        {/* MAYEL WORDMARK */}
-        <div className="mb-2 flex items-end justify-center" style={{ perspective: "600px" }}>
-          {/* M */}
-          <span
-            className="hero-letter text-white font-black leading-none select-none"
+        {/* SHADDA */}
+        <div style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: "-8px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/shadda.png"
+            alt=""
+            aria-hidden="true"
             style={{
-              fontFamily: "'Raleway', system-ui, sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(4rem, 22vw, 7rem)",
-              letterSpacing: "-0.02em",
-              textShadow: "0 0 60px rgba(255,255,255,0.08)",
+              width: "clamp(40px, 10vw, 56px)",
+              height: "auto",
+              marginLeft: "5%",
+              filter: "brightness(0) saturate(100%) invert(14%) sepia(96%) saturate(4938%) hue-rotate(353deg) brightness(85%) contrast(110%)",
+              pointerEvents: "none",
             }}
-          >
-            M
-          </span>
-          {/* A */}
-          <span
-            className="hero-letter text-white font-black leading-none select-none"
-            style={{
-              fontFamily: "'Raleway', system-ui, sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(4rem, 22vw, 7rem)",
-              letterSpacing: "-0.02em",
-              textShadow: "0 0 60px rgba(255,255,255,0.08)",
-            }}
-          >
-            A
-          </span>
-          {/* Y — blue with shadda above */}
-          <span
-            className="hero-letter relative inline-block leading-none select-none"
-            style={{
-              fontFamily: "'Raleway', system-ui, sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(4rem, 22vw, 7rem)",
-              letterSpacing: "-0.02em",
-              color: "#1870b8",
-              textShadow: "0 0 40px rgba(24,112,184,0.6)",
-            }}
-          >
-            {/* Shadda image — bottom edge sits at top of Y, centered */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/shadda.png"
-              alt=""
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                bottom: "100%",
-                left: "50%",
-                transform: "translateX(-50%) translateY(30%)",
-                width: "0.55em",
-                height: "auto",
-                pointerEvents: "none",
-                userSelect: "none",
-              }}
-            />
-            Y
-          </span>
-          {/* E */}
-          <span
-            className="hero-letter text-white font-black leading-none select-none"
-            style={{
-              fontFamily: "'Raleway', system-ui, sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(4rem, 22vw, 7rem)",
-              letterSpacing: "-0.02em",
-              textShadow: "0 0 60px rgba(255,255,255,0.08)",
-            }}
-          >
-            E
-          </span>
-          {/* L */}
-          <span
-            className="hero-letter text-white font-black leading-none select-none"
-            style={{
-              fontFamily: "'Raleway', system-ui, sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(4rem, 22vw, 7rem)",
-              letterSpacing: "-0.02em",
-              textShadow: "0 0 60px rgba(255,255,255,0.08)",
-            }}
-          >
-            L
-          </span>
+          />
         </div>
+
+        {/* MAYEL */}
+        <div className="flex items-end justify-center" style={{ lineHeight: 1 }}>
+          {["M", "A", "Y", "E", "L"].map((letter) => (
+            <span
+              key={letter}
+              className="hero-letter select-none"
+              style={{
+                fontFamily: "'Raleway', system-ui, sans-serif",
+                fontWeight: 900,
+                fontSize: "clamp(5rem, 24vw, 10rem)",
+                letterSpacing: "-0.03em",
+                color: "#FFFFFF",
+                lineHeight: 0.9,
+                display: "block",
+              }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
+
+        {/* RED DIVIDER */}
+        <div
+          className="hero-divider"
+          style={{
+            width: "100%",
+            maxWidth: "320px",
+            height: "2px",
+            background: "linear-gradient(90deg, transparent, #C41E1E 30%, #C41E1E 70%, transparent)",
+            margin: "14px auto 14px",
+            transformOrigin: "center",
+          }}
+        />
 
         {/* TAGLINE */}
-        <div className="hero-tagline-wrap flex items-center gap-3 mt-2 mb-6">
-          <div className="h-px bg-gradient-to-r from-transparent to-brand-blue/60" style={{ width: "45px" }} />
-          <span className="text-brand-blue font-semibold uppercase select-none" style={{ fontSize: "0.65rem", letterSpacing: "0.35em" }}>
+        <div className="hero-tagline-wrap" style={{ marginBottom: "24px" }}>
+          <p style={{
+            fontSize: "0.6rem",
+            color: "white",
+            opacity: 0.65,
+            fontWeight: 700,
+            letterSpacing: "0.42em",
+            textTransform: "uppercase",
+          }}>
             Order · Eat · Repeat
-          </span>
-          <div className="h-px bg-gradient-to-l from-transparent to-brand-blue/60" style={{ width: "45px" }} />
+          </p>
         </div>
-
-        {/* SUBTITLE */}
-        <p className="hero-subtitle text-cream/60 text-sm font-light tracking-wide mb-8 max-w-xs">
-          Premium food experience. Crafted with passion.
-        </p>
 
         {/* CTA */}
-        <div className="hero-cta-btn flex flex-col items-center gap-3 w-full max-w-xs">
-          <a href="#menu" className="btn-primary w-full text-center" style={{ letterSpacing: "0.25em" }}>
-            View Menu
-          </a>
-          <a href="#gallery" className="btn-ghost w-full text-center" style={{ letterSpacing: "0.2em", fontSize: "0.75rem" }}>
-            Our Food
+        <div className="hero-cta-btn w-full" style={{ maxWidth: "240px", marginBottom: "28px" }}>
+          <a
+            href="#menu"
+            style={{
+              display: "block",
+              width: "100%",
+              textAlign: "center",
+              fontFamily: "'Raleway', system-ui, sans-serif",
+              fontWeight: 900,
+              fontSize: "0.7rem",
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+              padding: "1.05rem 0",
+              borderRadius: "9999px",
+              color: "white",
+              background: "#C41E1E",
+              boxShadow: "0 6px 28px rgba(196,30,30,0.45)",
+              transition: "transform 0.25s, box-shadow 0.25s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.transform = "scale(1.04)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 36px rgba(196,30,30,0.6)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.transform = "scale(1)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 28px rgba(196,30,30,0.45)";
+            }}
+          >
+            Order Now
           </a>
         </div>
-      </div>
 
-      {/* SCROLL INDICATOR */}
-      <div className="scroll-hint absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-        <span className="text-white/30 text-[0.6rem] tracking-[0.4em] uppercase">Scroll</span>
-        <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1.5">
-          <div className="scroll-dot-inner w-1.5 h-1.5 rounded-full bg-brand-blue" />
+        {/* TICKER — menu items scrolling */}
+        <div className="hero-ticker w-full overflow-hidden" style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "12px" }}>
+          <style>{`
+            @keyframes ticker {
+              from { transform: translateX(0); }
+              to   { transform: translateX(-50%); }
+            }
+            .ticker-track {
+              display: flex;
+              width: max-content;
+              animation: ticker 18s linear infinite;
+            }
+          `}</style>
+          <div className="ticker-track">
+            {[...tickerItems, ...tickerItems].map((item, i) => (
+              <span
+                key={i}
+                style={{
+                  fontSize: "0.55rem",
+                  color: "white",
+                  opacity: 0.35,
+                  letterSpacing: "0.25em",
+                  textTransform: "uppercase",
+                  fontWeight: 600,
+                  whiteSpace: "nowrap",
+                  padding: "0 1.5rem",
+                }}
+              >
+                {item}
+                <span style={{ marginLeft: "1.5rem", color: "#C41E1E", opacity: 0.6 }}>·</span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* BOTTOM FADE */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 z-[3] bg-gradient-to-t from-dark-bg to-transparent pointer-events-none" />
     </section>
   );
 }
