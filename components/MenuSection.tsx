@@ -168,103 +168,86 @@ export default function MenuSection() {
 
   return (
     <>
-    <section ref={sectionRef} id="menu" className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(24,112,184,0.05) 0%, transparent 60%)" }} />
-
-      {/* Marquee */}
-      <div className="overflow-hidden mb-12 border-y border-dark-border py-3">
-        <div className="marquee-track">
-          {Array(8).fill(null).map((_, i) => (
-            <span key={i} className="text-dark-border font-black uppercase tracking-widest mx-6 select-none"
-              style={{ fontFamily: "'Raleway', sans-serif", fontSize: "0.7rem" }}>
-              MAYEL MENU &nbsp;·&nbsp; ORDER · EAT · REPEAT &nbsp;·&nbsp;
-            </span>
-          ))}
-        </div>
-      </div>
+    <section ref={sectionRef} id="menu" className="relative py-20 overflow-hidden">
 
       <div className="px-6 max-w-lg mx-auto">
-        <div className="menu-section-label flex items-center gap-3 mb-5">
-          <div className="gold-divider" />
-          <span className="section-label">The Menu</span>
-        </div>
 
-        <h2 className="menu-section-heading section-title mb-10">
-          What are you<br />
-          <span className="italic text-brand-blue">craving?</span>
+        <h2 className="menu-section-heading mb-8" style={{
+          fontFamily: "'Raleway', system-ui, sans-serif",
+          fontWeight: 900,
+          fontSize: "clamp(2rem, 8vw, 3.2rem)",
+          lineHeight: 1.05,
+          color: "#0D1B2A",
+          letterSpacing: "-0.02em",
+        }}>
+          What are you craving?
         </h2>
 
-        {/* Tabs */}
-        <div className="menu-tabs-wrap mb-8">
-          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none" }}>
+        {/* Tabs — underline style */}
+        <div className="menu-tabs-wrap mb-0 border-b border-dark-border">
+          <div className="flex gap-0 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
             {menuData.map((cat) => (
               <button key={cat.id} onClick={() => setActiveTab(cat.id)}
-                className={`menu-tab flex-shrink-0 ${activeTab === cat.id ? "active" : ""}`}
-                style={{ touchAction: "manipulation" }}>
-                <span className="mr-1.5">{cat.icon}</span>{cat.label}
+                className="flex-shrink-0 px-4 py-3 text-xs font-bold tracking-wider uppercase transition-all duration-200 relative"
+                style={{
+                  color: activeTab === cat.id ? "#C41E1E" : "#64748B",
+                  borderBottom: activeTab === cat.id ? "2px solid #C41E1E" : "2px solid transparent",
+
+                  marginBottom: "-1px",
+                  touchAction: "manipulation",
+                  background: "none",
+                }}>
+                {cat.label}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Items */}
-        <div ref={itemsRef} className="space-y-3" style={{ transition: "opacity 0.15s" }}>
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-2xl">{activeCategory.icon}</span>
-            <div>
-              <h3 className="text-cream font-bold text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>
-                {activeCategory.label}
-              </h3>
-              <p className="text-muted text-xs tracking-wider">{activeCategory.items.length} items</p>
-            </div>
-          </div>
-
+        {/* Items — clean list */}
+        <div ref={itemsRef} style={{ transition: "opacity 0.15s" }}>
           {activeCategory.items.map((item, i) => {
             const qty = getQty(item.name);
             return (
               <div
                 key={`${activeTab}-${i}`}
-                className="menu-item-card"
-                style={{ touchAction: "manipulation", cursor: "pointer" }}
+                className="flex items-start justify-between gap-4 py-4 border-b border-dark-border cursor-pointer group"
+                style={{ touchAction: "manipulation" }}
                 onClick={() => openItem(item)}
               >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-cream font-semibold text-sm leading-tight mb-1">{item.name}</h4>
-                    {item.desc && (
-                      <p className="text-muted text-xs leading-relaxed line-clamp-2">{item.desc}</p>
-                    )}
-                  </div>
-                  <div className="flex-shrink-0 flex flex-col items-end gap-1.5">
-                    <span className="text-brand-gold font-bold text-sm" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                      ${item.price}
-                    </span>
-                    {qty > 0 && (
-                      <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => removeFromCart(item.name)}
-                          className="w-7 h-7 rounded-full bg-white/5 border border-white/10 text-cream flex items-center justify-center text-base"
-                          style={{ touchAction: "manipulation" }}>−</button>
-                        <span className="text-brand-blue font-bold text-sm w-4 text-center">{qty}</span>
-                        <button onClick={() => openItem(item)}
-                          className="w-7 h-7 rounded-full bg-brand-blue text-white flex items-center justify-center text-base"
-                          style={{ touchAction: "manipulation" }}>+</button>
-                      </div>
-                    )}
-                    {qty === 0 && (
-                      <div className="w-8 h-8 rounded-full border border-brand-blue/40 text-brand-blue flex items-center justify-center text-lg">
-                        +
-                      </div>
-                    )}
-                  </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="text-cream font-semibold text-sm leading-tight mb-0.5 group-hover:text-brand-blue transition-colors">{item.name}</h4>
+                  {item.desc && (
+                    <p className="text-muted text-xs leading-relaxed line-clamp-2">{item.desc}</p>
+                  )}
+                </div>
+                <div className="flex-shrink-0 flex items-center gap-3 pt-0.5">
+                  <span className="text-brand-red font-bold text-sm" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                    ${item.price}
+                  </span>
+                  {qty > 0 ? (
+                    <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
+                      <button onClick={() => removeFromCart(item.name)}
+                        className="w-6 h-6 rounded-full bg-gray-100 text-cream flex items-center justify-center text-sm font-bold"
+                        style={{ touchAction: "manipulation" }}>−</button>
+                      <span className="text-brand-blue font-bold text-sm w-4 text-center">{qty}</span>
+                      <button onClick={() => openItem(item)}
+                        className="w-6 h-6 rounded-full bg-brand-blue text-white flex items-center justify-center text-sm font-bold"
+                        style={{ touchAction: "manipulation" }}>+</button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={(e) => { e.stopPropagation(); openItem(item); }}
+                      className="w-7 h-7 rounded-full border border-brand-blue/30 text-brand-blue flex items-center justify-center text-base font-bold group-hover:bg-brand-blue group-hover:text-white transition-all"
+                      style={{ touchAction: "manipulation" }}>+</button>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-dark-border text-center">
-          <p className="text-muted text-xs tracking-wide">All items freshly prepared daily</p>
+        <div className="mt-8 text-center">
+          <p className="text-muted text-xs">All items freshly prepared daily</p>
         </div>
       </div>
     </section>
@@ -277,11 +260,11 @@ export default function MenuSection() {
 
         {/* Sheet */}
         <div className="relative w-full max-w-lg mx-auto rounded-t-3xl overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #0d0e1a 0%, #06070f 100%)", border: "1px solid rgba(24,112,184,0.2)", borderBottom: "none" }}>
+          style={{ background: "#FFFFFF", border: "1px solid rgba(18,85,160,0.15)", borderBottom: "none", boxShadow: "0 -8px 40px rgba(18,85,160,0.1)" }}>
 
           {/* Handle */}
           <div className="flex justify-center pt-3 pb-1">
-            <div className="w-10 h-1 rounded-full bg-white/20" />
+            <div className="w-10 h-1 rounded-full bg-black/10" />
           </div>
 
           <div className="px-6 pb-8 pt-3">
@@ -296,7 +279,7 @@ export default function MenuSection() {
                 </span>
               </div>
               <button onClick={() => setModalItem(null)}
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-muted"
+                className="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-muted"
                 style={{ touchAction: "manipulation" }}>✕</button>
             </div>
 
@@ -344,7 +327,7 @@ export default function MenuSection() {
                   className={`w-full flex items-center justify-between px-4 py-3.5 rounded-2xl border transition-all duration-150 ${
                     addCombo
                       ? "border-brand-gold/50 bg-brand-gold/10"
-                      : "border-white/10 bg-white/3"
+                      : "border-dark-border bg-gray-50"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -356,7 +339,7 @@ export default function MenuSection() {
                   </div>
                   <div className={`w-6 h-6 rounded-full border flex items-center justify-center transition-all ${
                     addCombo ? "bg-brand-gold border-brand-gold text-white" : "border-white/20 text-transparent"
-                  }`} style={{ fontSize: "0.7rem" }}>✓</div>
+                  }`} style={{ fontSize: "0.7rem", borderColor: addCombo ? undefined : "#DDE5F5" }}>✓</div>
                 </button>
 
                 {addCombo && (
@@ -373,7 +356,7 @@ export default function MenuSection() {
                             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 border ${
                               comboDrink === drink
                                 ? "bg-brand-blue border-brand-blue text-white"
-                                : "bg-white/5 border-white/15 text-cream/70"
+                                : "bg-gray-50 border-dark-border text-muted"
                             }`}
                           >
                             🥤 {drink}
@@ -394,7 +377,7 @@ export default function MenuSection() {
                             className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 border ${
                               comboSauce === sauce
                                 ? "bg-brand-gold border-brand-gold text-white"
-                                : "bg-white/5 border-white/15 text-cream/70"
+                                : "bg-gray-50 border-dark-border text-muted"
                             }`}
                           >
                             🥫 {sauce}
@@ -426,7 +409,7 @@ export default function MenuSection() {
     {totalItems > 0 && !modalItem && !checkoutOpen && (
       <div className="fixed bottom-6 left-4 right-4 z-50 max-w-lg mx-auto">
         <div className="rounded-2xl overflow-hidden"
-          style={{ background: "rgba(13,14,26,0.98)", border: "1px solid rgba(24,112,184,0.4)", boxShadow: "0 8px 40px rgba(24,112,184,0.25)" }}>
+          style={{ background: "rgba(255,255,255,0.98)", border: "1px solid rgba(18,85,160,0.2)", boxShadow: "0 8px 40px rgba(18,85,160,0.18)" }}>
 
           <button onClick={() => setCartOpen((o) => !o)}
             className="w-full flex items-center justify-between px-5 py-4"
@@ -446,14 +429,14 @@ export default function MenuSection() {
           </button>
 
           {cartOpen && (
-            <div className="px-5 pb-3 space-y-2.5 max-h-48 overflow-y-auto border-t border-white/5 pt-3">
+            <div className="px-5 pb-3 space-y-2.5 max-h-48 overflow-y-auto border-t border-dark-border pt-3">
               {cart.map((item) => (
                 <div key={item.name}>
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2 flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
                         <button onClick={() => removeFromCart(item.name)}
-                          className="w-5 h-5 rounded-full bg-white/5 text-muted flex items-center justify-center text-xs"
+                          className="w-5 h-5 rounded-full bg-gray-100 text-muted flex items-center justify-center text-xs"
                           style={{ touchAction: "manipulation" }}>−</button>
                         <span className="text-cream text-xs font-bold min-w-[14px] text-center">{item.qty}</span>
                         <button onClick={() => openItem({ name: item.name, price: item.price })}
@@ -495,10 +478,10 @@ export default function MenuSection() {
       <div className="fixed inset-0 z-[80] flex items-end" style={{ touchAction: "none" }}>
         <div className="absolute inset-0 bg-black/70" onClick={() => setCheckoutOpen(false)} />
         <div className="relative w-full max-w-lg mx-auto rounded-t-3xl overflow-hidden"
-          style={{ background: "linear-gradient(160deg, #0d0e1a 0%, #06070f 100%)", border: "1px solid rgba(24,112,184,0.2)", borderBottom: "none" }}>
+          style={{ background: "#FFFFFF", border: "1px solid rgba(18,85,160,0.15)", borderBottom: "none", boxShadow: "0 -8px 40px rgba(18,85,160,0.1)" }}>
 
           <div className="flex justify-center pt-3 pb-1">
-            <div className="w-10 h-1 rounded-full bg-white/20" />
+            <div className="w-10 h-1 rounded-full bg-black/10" />
           </div>
 
           <div className="px-6 pb-8 pt-3">
@@ -507,7 +490,7 @@ export default function MenuSection() {
                 Your Details
               </h3>
               <button onClick={() => setCheckoutOpen(false)}
-                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-muted"
+                className="w-8 h-8 rounded-full border border-dark-border flex items-center justify-center text-muted"
                 style={{ touchAction: "manipulation" }}>✕</button>
             </div>
 
@@ -521,7 +504,7 @@ export default function MenuSection() {
                   value={customer.name}
                   onChange={(e) => setCustomer((p) => ({ ...p, name: e.target.value }))}
                   className="w-full px-4 py-3.5 rounded-xl text-cream text-sm placeholder-muted/40 outline-none focus:border-brand-blue/60"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+                  style={{ background: "rgba(18,85,160,0.03)", border: "1px solid #DDE5F5" }}
                 />
               </div>
 
@@ -533,7 +516,7 @@ export default function MenuSection() {
                   value={customer.phone}
                   onChange={(e) => setCustomer((p) => ({ ...p, phone: e.target.value }))}
                   className="w-full px-4 py-3.5 rounded-xl text-cream text-sm placeholder-muted/40 outline-none focus:border-brand-blue/60"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+                  style={{ background: "rgba(18,85,160,0.03)", border: "1px solid #DDE5F5" }}
                 />
               </div>
 
@@ -546,7 +529,7 @@ export default function MenuSection() {
                   value={customer.location}
                   onChange={(e) => setCustomer((p) => ({ ...p, location: e.target.value }))}
                   className="w-full px-4 py-3.5 rounded-xl text-cream text-sm placeholder-muted/40 outline-none focus:border-brand-blue/60"
-                  style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
+                  style={{ background: "rgba(18,85,160,0.03)", border: "1px solid #DDE5F5" }}
                 />
               </div>
             </div>
