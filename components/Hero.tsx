@@ -46,13 +46,16 @@ export default function Hero() {
     >
       {/* ── BACKGROUND PHOTO ── */}
       <div ref={bgRef} className="absolute inset-0 will-change-transform">
+        <style>{`
+          .hero-bg-img { object-position: 62% center; }
+          @media (max-width: 768px) { .hero-bg-img { object-position: 78% center; } }
+        `}</style>
         <Image
           src="/images/love-that-chicken.jpg"
           alt=""
           fill
           priority
-          className="object-cover"
-          style={{ objectPosition: "62% center" }}
+          className="object-cover hero-bg-img"
           sizes="100vw"
         />
       </div>
@@ -96,7 +99,7 @@ export default function Hero() {
               height={160}
               priority
               style={{
-                width: "clamp(180px, 52vw, 280px)",
+                width: "clamp(200px, 56vw, 280px)",
                 height: "auto",
                 filter: "brightness(0) invert(1)",
               }}
